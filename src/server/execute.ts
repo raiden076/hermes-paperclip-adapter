@@ -318,8 +318,8 @@ export async function execute(
   const config = (ctx.agent?.adapterConfig ?? {}) as Record<string, unknown>;
 
   // ── Resolve configuration ──────────────────────────────────────────────
-  const hermesCmd = cfgString(config.hermesCommand) || HERMES_CLI;
-  const model = cfgString(config.model) || DEFAULT_MODEL;
+    const hermesCmd = cfgString(config.hermesCommand) || HERMES_CLI;
+    const model = cfgString(config.model); // Let Hermes use its own config if not specified
   const timeoutSec = cfgNumber(config.timeoutSec) || DEFAULT_TIMEOUT_SEC;
   const graceSec = cfgNumber(config.graceSec) || DEFAULT_GRACE_SEC;
   const toolsets = cfgString(config.toolsets) || cfgStringArray(config.enabledToolsets)?.join(",");
