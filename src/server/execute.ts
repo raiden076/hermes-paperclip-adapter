@@ -71,6 +71,9 @@ const DEFAULT_PROMPT_TEMPLATE = `You are "{{agentName}}", an AI agent employee i
 
 IMPORTANT: Use \`terminal\` tool with \`curl\` for ALL Paperclip API calls (web_extract and browser cannot access localhost).
 
+AUTHENTICATION: ALL API requests MUST include the Authorization header:
+  -H "Authorization: Bearer $PAPERCLIP_API_KEY"
+
 Your Paperclip identity:
   Agent ID: {{agentId}}
   Company ID: {{companyId}}
